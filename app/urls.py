@@ -12,7 +12,7 @@ from core.views import UserViewSet
 
 from core.views import CategoriaViewSet, UserViewSet
 
-from core.views import CategoriaViewSet, EditoraViewSet, autorViewSet, UserViewSet, LivroViewSet
+from core.views import CategoriaViewSet, EditoraViewSet, AutorViewSet, UserViewSet, LivroViewSet
 
 router = DefaultRouter()
 
@@ -20,7 +20,7 @@ router.register(r"categorias", CategoriaViewSet)
 router.register(r"editoras", EditoraViewSet)
 router.register(r'categorias', CategoriaViewSet, basename='categorias')
 router.register(r'usuarios', UserViewSet, basename='usuarios')
-router.register(r'autor', autorViewSet, basename='autor')
+router.register(r'autor', AutorViewSet, basename='autor')
 router.register(r'Livro', LivroViewSet, basename='Livro')
 
 urlpatterns = [
