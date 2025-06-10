@@ -50,7 +50,9 @@ class UserAdmin(BaseUserAdmin):
             },
         ),
     )
-
+class UserAdmin(UserAdmin):
+ (_('Personal Info'), {'fields': ('name', 'passage_id', 'foto')})
+ 
 @admin.register(Autor)
 class AutorAdmin(admin.ModelAdmin):
     list_display = ('nome', 'email')
