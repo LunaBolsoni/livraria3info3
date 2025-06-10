@@ -1,7 +1,9 @@
-from rest_framework.serializers import ModelSerializer,SlugRelatedField
+from rest_framework.serializers import ModelSerializer, SlugRelatedField
+
 from core.models import Livro
 from uploader.models import Image
 from uploader.serializers import ImageSerializer
+
 
 class LivroSerializer(ModelSerializer):
     capa_attachment_key = SlugRelatedField(
@@ -16,7 +18,8 @@ class LivroSerializer(ModelSerializer):
     class Meta:
         model = Livro
         fields = '__all__'
- 
+
+
 class LivroListRetrieveSerializer(ModelSerializer):
     capa = ImageSerializer(required=False)
     class Meta:

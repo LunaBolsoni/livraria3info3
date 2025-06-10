@@ -9,6 +9,7 @@ from django.contrib.auth.models import (
 )
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+
 from uploader.models import Image
 
 
@@ -67,7 +68,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         verbose_name=_("Usuário é da equipe"),
         help_text=_("Indica que este usuário pode acessar o Admin."),
     )
-    foto=models.ForeignKey(
+    foto = models.ForeignKey(
         Image,
         related_name="+",
         on_delete=models.SET_NULL,
